@@ -4,22 +4,11 @@ document.getElementById("submit").addEventListener("click", function() {
     let unit = document.querySelector("#unit").value;
     let term = document.querySelector("#term").value;
     let cat = document.querySelector("#cat").value;
-    let desc = document.querySelector("#editor").innerHTML;
-
+    let desc = CKEDITOR.instances.editor.getData();
+    let close = document.querySelector("#close").value;
     let output = document.querySelector("#output");
 
-
-    //try this code below from here: https://stackoverflow.com/questions/39519950/convert-quill-delta-to-html
-    // function quillGetHTML(inputDelta) {
-    //     var tempCont = document.createElement("div");
-    //     (new Quill(tempCont)).setContents(inputDelta);
-    //     return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
-    // }
-
-
-
-    output.innerHTML =
-        `
+    output.innerHTML = `
     <h2> 
     ${num} <br/>
     ${title}
@@ -34,5 +23,7 @@ document.getElementById("submit").addEventListener("click", function() {
     </em>
     </p>
     ${desc}
+    <p>To apply, please <a href="https://workforcenow.adp.com/mascsr/default/mdf/recruitment/recruitment.html?cid=108450a1-fa83-41bf-a7d1-030ba77254bd&amp;ccId=19000101_000001&amp;type=MP&amp;lang=en_CA">send your resume and cover letter</a> no later than ${close}.</p>
+
     `;
 });
