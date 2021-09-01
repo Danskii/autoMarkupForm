@@ -8,6 +8,16 @@ document.getElementById("submit").addEventListener("click", function() {
 
     let output = document.querySelector("#output");
 
+
+    //try this code below from here: https://stackoverflow.com/questions/39519950/convert-quill-delta-to-html
+    // function quillGetHTML(inputDelta) {
+    //     var tempCont = document.createElement("div");
+    //     (new Quill(tempCont)).setContents(inputDelta);
+    //     return tempCont.getElementsByClassName("ql-editor")[0].innerHTML;
+    // }
+
+
+
     output.innerHTML =
         `
     <h2> 
